@@ -1,0 +1,15 @@
+{
+  "name": "model",
+  "repo": "apily/model",
+  "version": "0.0.1",
+  "description": "Model component",
+  "keywords": ["client-side", "MVC", "model"],
+  "scripts": ["index.js"],
+  "dependencies": {
+    "component/emitter": "*"
+  },
+  "development": {
+    "component/assert": "*"
+  },
+  "license": "MIT"
+}
