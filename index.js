@@ -165,3 +165,16 @@ Attribute.prototype.del = function(key, options) {
 
   return this;
 };
+
+/*
+ * has
+ * Return `true` if attributes contains `key`, `false` otherwise.
+ *
+ * @param {String} key key
+ * @return {Boolean} `true` if attributes contains `key`, `false` otherwise.
+ * @api public
+ */
+
+Attribute.prototype.has = function(key) {
+  return this.attributes[key] != null;
+};
