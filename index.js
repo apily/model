@@ -42,3 +42,15 @@ function Model(attributes) {
 Model.prototype = Emitter.prototype;
 Model.prototype.constructor = Model;
 
+/*
+ * get
+ * Get the attribute value.
+ *
+ * @param {String} key attribute name
+ * @return {Mixed} the attribute value
+ * @api public
+ */
+
+Model.prototype.get = function(key) {
+  return this.attributes[key];
+};
