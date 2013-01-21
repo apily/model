@@ -1,0 +1,26 @@
+{  
+  "name": "model",
+  "description": "client-side MVC Model component",
+  "version": "0.0.1",
+  "maintainers": [
+    {
+      "name": "Enrico Marino",
+      "url": "onirame.com"
+    },
+    {
+      "name": "Federico Spini",
+      "url": "federicospini.com"
+    }
+  ],
+  "homepage": "https://github.com/apily/model",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/apily/model.git"
+  },
+  "main": "index.js",
+  "engines": {
+    "node": "*"
+  },
+  "dependencies": {},
+  "devDependencies": {}
+}
