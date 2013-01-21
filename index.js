@@ -1,17 +1,17 @@
 
 /*
- * collection
- * Collection component
+ * model
+ * Model model
  *
  * @copyright 2012 Enrico Marino and Federico Spini
  * @license MIT
  */ 
 
 /*
- * Expose `Collection`
+ * Expose `Model`
  */
 
-module.exports = Collection;
+module.exports = Model;
 
 /*
  * Module dependencies
@@ -20,25 +20,25 @@ module.exports = Collection;
 var Emitter = require('emitter');
 
 /*
- * Collection
- * Create a collection.
+ * Model
+ * Create a model.
  *
- * @param {Array} models models
+ * @param {Object} attributes attributes
  * @return {Collection} a collection
  */
 
-function Collection(models) {
-  if (!(this instanceof Collection)) {
-    return new Collection(models);
+function Model(attributes) {
+  if (!(this instanceof Model)) {
+    return new Model(attributes);
   }
   Emitter.call(this);
-  this.models = models || [];
+  this.attributes = attributes || [];
 }
 
 /*
  * Inheritance
  */
 
-Collection.prototype = Emitter.prototype;
-Collection.prototype.constructor = Collection;
+Model.prototype = Emitter.prototype;
+Model.prototype.constructor = Model;
 
