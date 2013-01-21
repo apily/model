@@ -91,3 +91,51 @@ Model.prototype.set = function(key, value, options) {
 
   return this;
 };
+
+/*
+ * set_all
+ * Set the attribute values.
+ *
+ * @param {Object} values attribute values
+ * @param {Object} options options
+ *   @param {Boolean} [options.silent]
+ * @return {Object} this, for chaining
+ * @api public
+ */
+
+Model.prototype.set_all = function(values, options) {
+  if (values == null) {
+    return this;
+  }
+
+  var silent = options && options.silent;
+  var attributes = this.attributes;
+  var key;
+  var value;
+  var previous;
+  var changed;
+  var created;
+  var emitted;
+  
+  for (key in values) {
+    previous = attributes[key];
+    value = values[key];    
+    created = !(key in attributes);
+    changed = created || previous !== value;
+
+    if (changed) {
+      attributes[key] = value;
+    }
+    if (changed && !silent) {
+      this.emit('change:' + key, this, value, previous);
+      emitted = true;
+    }
+  }
+
+  if (emitted) {
+    this.emit('change', this);
+  }
+
+  return this;
+};
+
