@@ -54,3 +54,40 @@ Model.prototype.constructor = Model;
 Model.prototype.get = function(key) {
   return this.attributes[key];
 };
+
+/*
+ * set
+ * Set the attribute value.
+ *
+ * @param {String} key attribute name
+ * @param {Mixed} value attribute value
+ * @param {Object} options options
+ *   @param {Boolean} [options.silent]
+ * @return {Object} this, for chaining
+ * @api public
+ */
+
+Model.prototype.set = function(key, value, options) {
+  if (key == null) {
+    return this;
+  }
+  // if (typeof key === 'object') {
+  //   return this.set_all(key, value);
+  // }
+
+  var attributes = this.attributes;
+  var silent = options && options.silent;
+  var previous = attributes[key];
+  var created = !(key in attributes);
+  var changed = created || previous !== value;
+
+  if (changed) {
+    attributes[key] = value;
+  }
+  if (changed && !silent) {
+    this.emit('change:' + key, this, value, previous);
+    this.emit('change', this);
+  }
+
+  return this;
+};
