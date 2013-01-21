@@ -71,9 +71,9 @@ Model.prototype.set = function(key, value, options) {
   if (key == null) {
     return this;
   }
-  // if (typeof key === 'object') {
-  //   return this.set_all(key, value);
-  // }
+  if (typeof key === 'object') {
+    return this.set_all(key, value);
+  }
 
   var attributes = this.attributes;
   var silent = options && options.silent;
