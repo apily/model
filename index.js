@@ -149,7 +149,7 @@ Model.prototype.set_all = function(values, options) {
  * @api public
  */
 
-Attribute.prototype.del = function(key, options) {
+Model.prototype.del = function(key, options) {
   var attributes = this.attributes;
   var silent = options && options.silent;
   var value = attributes[key];
@@ -174,6 +174,6 @@ Attribute.prototype.del = function(key, options) {
  * @api public
  */
 
-Attribute.prototype.has = function(key) {
+Model.prototype.has = function(key) {
   return this.attributes[key] != null;
 };
