@@ -1,4 +1,3 @@
-
 /*
  * model
  * Model model
@@ -39,7 +38,7 @@ function Model(attributes) {
  * Inheritance
  */
 
-Model.prototype = Emitter.prototype;
+Model.prototype = Object.create(Emitter.prototype);
 Model.prototype.constructor = Model;
 
 /*
