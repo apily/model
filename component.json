@@ -6,7 +6,7 @@
   "keywords": ["client-side", "MVC", "model"],
   "scripts": ["index.js"],
   "dependencies": {
-    "component/emitter": "*"
+    "apily/emitter": "*"
   },
   "development": {
     "component/assert": "*"
