@@ -23,7 +23,7 @@ var Emitter = require('emitter');
  * Create a model.
  *
  * @param {Object} attributes attributes
- * @return {Collection} a collection
+ * @return {Model} a model
  */
 
 function Model(attributes) {
