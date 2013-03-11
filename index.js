@@ -1,4 +1,5 @@
-/*
+
+/**
  * model
  * Model model
  *
@@ -6,19 +7,19 @@
  * @license MIT
  */ 
 
-/*
+/**
  * Expose `Model`
  */
 
 module.exports = Model;
 
-/*
+/**
  * Module dependencies
  */
 
 var Emitter = require('emitter');
 
-/*
+/**
  * Model
  * Create a model.
  *
@@ -34,14 +35,14 @@ function Model(attributes) {
   this.attributes = attributes || [];
 }
 
-/*
- * Inheritance
+/**
+ * Inherit from `Emitter`
  */
 
 Model.prototype = Object.create(Emitter.prototype);
 Model.prototype.constructor = Model;
 
-/*
+/**
  * get
  * Get the attribute value.
  *
@@ -54,7 +55,7 @@ Model.prototype.get = function(key) {
   return this.attributes[key];
 };
 
-/*
+/**
  * set
  * Set the attribute value.
  *
@@ -91,7 +92,7 @@ Model.prototype.set = function(key, value, options) {
   return this;
 };
 
-/*
+/**
  * set_all
  * Set the attribute values.
  *
@@ -138,7 +139,7 @@ Model.prototype.set_all = function(values, options) {
   return this;
 };
 
-/*
+/**
  * del
  * Delete attribute `key`.
  *
@@ -165,7 +166,7 @@ Model.prototype.del = function(key, options) {
   return this;
 };
 
-/*
+/**
  * has
  * Return `true` if attributes contains `key`, `false` otherwise.
  *
