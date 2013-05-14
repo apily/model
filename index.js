@@ -1,9 +1,8 @@
-
 /**
  * model
  * Model model
  *
- * @copyright 2012 Enrico Marino and Federico Spini
+ * @copyright 2013 Enrico Marino and Federico Spini
  * @license MIT
  */ 
 
@@ -20,19 +19,19 @@ module.exports = Model;
 var Emitter = require('emitter');
 
 /**
- * Model
- * Create a model.
- *
- * @param {Object} attributes attributes
+ * @constructor Model
+ * @description Create a model.
+ * @param {Object} options options
+ *   @param {Object} [options.attributes] attributes
  * @return {Model} a model
  */
 
-function Model(attributes) {
+function Model (options) {
   if (!(this instanceof Model)) {
-    return new Model(attributes);
+    return new Model(options);
   }
   Emitter.call(this);
-  this.attributes = attributes || [];
+  this.attributes = options.attributes || {};
 }
 
 /**
@@ -51,7 +50,7 @@ Model.prototype.constructor = Model;
  * @api public
  */
 
-Model.prototype.get = function(key) {
+Model.prototype.get = function (key) {
   return this.attributes[key];
 };
 
@@ -67,7 +66,7 @@ Model.prototype.get = function(key) {
  * @api public
  */
 
-Model.prototype.set = function(key, value, options) {
+Model.prototype.set = function (key, value, options) {
   if (key == null) {
     return this;
   }
@@ -103,7 +102,7 @@ Model.prototype.set = function(key, value, options) {
  * @api public
  */
 
-Model.prototype.set_all = function(values, options) {
+Model.prototype.set_all = function (values, options) {
   if (values == null) {
     return this;
   }
@@ -150,7 +149,7 @@ Model.prototype.set_all = function(values, options) {
  * @api public
  */
 
-Model.prototype.del = function(key, options) {
+Model.prototype.del = function (key, options) {
   var attributes = this.attributes;
   var silent = options && options.silent;
   var value = attributes[key];
@@ -175,6 +174,6 @@ Model.prototype.del = function(key, options) {
  * @api public
  */
 
-Model.prototype.has = function(key) {
+Model.prototype.has = function (key) {
   return this.attributes[key] != null;
 };
