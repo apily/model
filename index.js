@@ -31,7 +31,8 @@ function Model (options) {
     return new Model(options);
   }
   Emitter.call(this);
-  this.attributes = options.attributes || {};
+  var attributes = options.attributes || {};
+  this.attributes = attributes;
 }
 
 /**
