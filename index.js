@@ -37,6 +37,16 @@ function Model (options) {
 }
 
 /**
+ * use
+ */
+
+Model.use = function (mixin) {
+  for (var p in mixin) {
+    Model.prototype[p] = mixin[p];
+  }
+};
+
+/**
  * Inherit from `Emitter`
  */
 
