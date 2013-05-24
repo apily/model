@@ -6,6 +6,59 @@ Model component
 
     $ component install apily/model
 
+## API
+
+### Model(Object:attributes, Object:options)
+
+Create a model
+
+```js
+var model = new Model({name: 'Enrico'});
+```
+
+### Model#get(String:key)
+
+Get the value of the property `key`.
+
+```js
+console.log('Hello ' + model.get('name') + '!');
+```
+
+### Model#set(String:key, Mixed:value, Object:options)
+
+Set the value of the property `key` to `value`.  
+If the value is different from the previous one   
+emit the event *change:*`key`.
+
+```js
+model.set('color', 'yellow');
+```
+
+### Model#set_all(Object:values)
+
+Set the values.
+
+```js
+model.set({color: 'red'})
+```
+
+### Model#del(String:key)
+
+Delete the property `key`.
+
+```js
+model.del('color');
+```
+
+### Model#has(String:key)
+
+Test if it has the property `key`.
+
+```js
+var has_color = model.has('color');
+```
+
+
 ## License
 
 (The MIT License)
