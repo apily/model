@@ -26,25 +26,16 @@ var Emitter = require('emitter');
  * @return {Model} a model
  */
 
-function Model (options) {
+function Model (attributes, options) {
   if (!(this instanceof Model)) {
-    return new Model(options);
+    return new Model(attributes, options);
   }
   Emitter.call(this);
-  var options = options || {};
-  var attributes = options.attributes || {};
-  this.attributes = attributes;
+  attributes = attributes || {};
+  options = options || {};
+
+  this.set_all(attributes, options);
 }
-
-/**
- * use
- */
-
-Model.use = function (mixin) {
-  for (var p in mixin) {
-    Model.prototype[p] = mixin[p];
-  }
-};
 
 /**
  * Inherit from `Emitter`
