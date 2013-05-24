@@ -34,6 +34,7 @@ function Model (attributes, options) {
   attributes = attributes || {};
   options = options || {};
 
+  this.attributes = {};
   this.set_all(attributes, options);
 }
 
