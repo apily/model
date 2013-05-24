@@ -33,7 +33,8 @@ function Model (attributes, options) {
   Emitter.call(this);
   attributes = attributes || {};
   options = options || {};
-
+  
+  this.collection = options.collection;
   this.attributes = {};
   this.set_all(attributes, options);
 }
