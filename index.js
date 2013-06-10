@@ -40,6 +40,20 @@ module.exports = function () {
   }
   
   /**
+   * use
+   * use plugin
+   * 
+   * @param {Function} fn plugin
+   * @return {model} this dor chaining
+   * @api public
+   */
+  
+  model.use = function (fn) {
+    fn(this);
+    return this;
+  };
+  
+  /**
    * Inherit from `Emitter`
    */
   
