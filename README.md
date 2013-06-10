@@ -6,6 +6,18 @@ Model component
 
     $ component install apily/model
 
+## Usage
+
+```js
+var model = require('model');
+
+var User = model();
+
+var user = User({ name: 'Enrico' });
+
+user.set('color', 'yellow');
+```
+
 ## API
 
 ### Model(Object:attributes, Object:options)
