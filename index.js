@@ -7,18 +7,16 @@
  */ 
 
 /**
- * Expose `create_model`
+ * Expose component
  */
 
-module.exports = create_model;
+module.exports = function () {
 
-/**
- * Module dependencies
- */
+  /**
+   * Component dependencies
+   */
 
-var Emitter = require('emitter');
-
-function create_model () {
+  var Emitter = require('emitter');
 
   /**
    * @constructor Model
