@@ -58,7 +58,7 @@ module.exports = function () {
    */
   
   model.prototype = Object.create(Emitter.prototype);
-  model.prototype.constructor = Model;
+  model.prototype.constructor = model;
   
   /**
    * get
